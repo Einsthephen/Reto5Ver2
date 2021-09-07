@@ -38,7 +38,7 @@ public class Click implements ActionListener{
         else if(actionEvent.getSource() == this.controlsPanel.getBtnAddUser()) {
             AddUser addUserView = new AddUser ();
             addUserView.setVisible(true);
-    }
+    }   else if(actionEvent.getSource() == this.controlsPanel.getBtnAddUser()){}
         
     }
 }

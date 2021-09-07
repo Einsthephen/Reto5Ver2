@@ -1,10 +1,12 @@
 package view;
 
+import controllers.Click;
 import controllers.RolController;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import javax.swing.*;
-
+import javax.swing.table.DefaultTableModel;
+import javax.swing.DefaultComboBoxModel;
 import models.RolModel;
 
 public class panelControl extends JPanel {
@@ -15,6 +17,8 @@ public class panelControl extends JPanel {
     private JTextField txtName;
     private JButton btnSearch;
     private JButton btnAddUser;
+    private JButton btnDelUser;
+    private JButton btnModifyUser;
     private JTable tblResults;
 
     /**
@@ -32,7 +36,7 @@ public class panelControl extends JPanel {
         setLayout(new GridLayout(2, 1));
         RolController dataInitial = new RolController();
 
-        this.setTblResults(dataInitial.obtenerRoles());
+        this.setTblResults((ArrayList<RolModel>) dataInitial.obtenerRoles());
 
         // Name patttern 
         this.lblName = new JLabel("Nombre del Usuario");
@@ -51,7 +55,7 @@ public class panelControl extends JPanel {
         // Insert  button
         this.btnAddUser = new JButton("Agregar Nuevo Usuario");
         add(this.getBtnAddUser());
-        this.getAddUser().addActionListener(clickEvent);
+        this.getBtnAddUser().addActionListener(clickEvent);
     }
 
    

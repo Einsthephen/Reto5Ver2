@@ -49,6 +49,10 @@ public class RolModel {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    public Object[] toArray(){
+        Object[] data = {id, nombre};
+        return data;
+    }
 
 
 }
