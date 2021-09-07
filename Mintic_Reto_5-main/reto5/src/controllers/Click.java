@@ -32,7 +32,7 @@ public class Click implements ActionListener{
             String userName  = (String)this.controlsPanel.getTxtName().getText();
             
             RolDAO userDAO  = new RolDAO();
-            ArrayList<RolModel> user  = userDAO.agregarRol(idRol, userName);
+            ArrayList<RolModel> user  = userDAO.obtenerRol(idRol);
             this.controlsPanel.setTblResults(user);
         }
         else if(actionEvent.getSource() == this.controlsPanel.getBtnAddUser()) {

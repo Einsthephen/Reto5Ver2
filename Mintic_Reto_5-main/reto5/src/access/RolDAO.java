@@ -142,4 +142,5 @@ public class RolDAO {
             System.err.println(ex);
         }
     }
+
 }

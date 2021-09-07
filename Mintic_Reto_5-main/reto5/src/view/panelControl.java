@@ -2,6 +2,7 @@ package view;
 
 import controllers.Click;
 import controllers.RolController;
+import controllers.initialData;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import javax.swing.*;
@@ -12,7 +13,7 @@ import models.RolModel;
 public class panelControl extends JPanel {
 
     private JLabel lblRol;
-    private JComboBox<RolModel> cbxRolsList;
+    private JTextField txtRol;
     private JLabel lblName;
     private JTextField txtName;
     private JButton btnSearch;
@@ -34,7 +35,7 @@ public class panelControl extends JPanel {
 
     private void initComponents() {
         setLayout(new GridLayout(2, 1));
-        RolController dataInitial = new RolController();
+        initialData dataInitial = new initialData();
 
         this.setTblResults((ArrayList<RolModel>) dataInitial.obtenerRoles());
 
@@ -63,9 +64,6 @@ public class panelControl extends JPanel {
         return lblRol;
     }
 
-    public JComboBox getCbxRolsList() {
-        return cbxRolsList;
-    }
 
     public JLabel getLblName() {
         return lblName;
@@ -89,11 +87,6 @@ public class panelControl extends JPanel {
         return tblResults;
     }
 
-    public void setCbxRolsListList(ArrayList<RolModel> presentations) {
-        this.cbxRolsList.setModel(new DefaultComboBoxModel<>(presentations.toArray(new RolModel[presentations.size()])));
-        this.getCbxRolsList().setSelectedIndex(0);
-    }
-
 
     public void setTblResults(ArrayList<RolModel> users) {
         String[] headers = {"Id Rol", "Nombre"};
@@ -105,5 +98,7 @@ public class panelControl extends JPanel {
             tableModel.addRow(users.get(i).toArray());   
         }
     }
+
+   
 
 }

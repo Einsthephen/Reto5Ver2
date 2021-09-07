@@ -2,9 +2,11 @@ package view;
 
 import java.awt.*;
 import javax.swing.*;
+
 public class panelResultados extends JPanel {
     private JTable tblResults;
     private JScrollPane jspPane;
+    
     public panelResultados() {
         initComponents();
     }
